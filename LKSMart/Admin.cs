@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,14 @@ namespace LKSMart
 {
     public partial class Admin : Form
     {
-        public Admin()
+        public Admin(int userId)
         {
             InitializeComponent();
+
+            this.UserId = userId;
         }
+
+        private int UserId;
 
         private void Admin_Load(object sender, EventArgs e)
         {
@@ -37,14 +42,25 @@ namespace LKSMart
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            using (var db = new lks_martEntities2()) {
 
+                var log = new tbl_log
+                {
 
-            Login login = new Login();
-            login.Show();
+                    waktu = DateTime.Now,
+                    aktivitas = "Logout",
+                    id_user = UserId,
+                };
+                db.tbl_log.Add(log);
+                db.SaveChanges();
 
-            this.Hide();
+                Console.WriteLine(UserId);
 
+                Login login = new Login();
+                login.Show();
+                this.Close();
 
+            }
         }
 
         private void btnLaporan_Click(object sender, EventArgs e)

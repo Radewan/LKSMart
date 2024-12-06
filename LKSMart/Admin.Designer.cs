@@ -32,9 +32,9 @@
             this.btnActivity = new System.Windows.Forms.Button();
             this.btnLaporan = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,7 +53,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 800);
+            this.panel1.Size = new System.Drawing.Size(300, 769);
             this.panel1.TabIndex = 29;
             // 
             // btnActivity
@@ -63,9 +63,9 @@
             this.btnActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActivity.ForeColor = System.Drawing.Color.White;
-            this.btnActivity.Location = new System.Drawing.Point(39, 467);
+            this.btnActivity.Location = new System.Drawing.Point(55, 560);
             this.btnActivity.Name = "btnActivity";
-            this.btnActivity.Size = new System.Drawing.Size(200, 50);
+            this.btnActivity.Size = new System.Drawing.Size(200, 49);
             this.btnActivity.TabIndex = 6;
             this.btnActivity.Text = "Log Activity";
             this.btnActivity.UseVisualStyleBackColor = false;
@@ -78,9 +78,9 @@
             this.btnLaporan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLaporan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLaporan.ForeColor = System.Drawing.Color.White;
-            this.btnLaporan.Location = new System.Drawing.Point(40, 372);
+            this.btnLaporan.Location = new System.Drawing.Point(55, 493);
             this.btnLaporan.Name = "btnLaporan";
-            this.btnLaporan.Size = new System.Drawing.Size(200, 50);
+            this.btnLaporan.Size = new System.Drawing.Size(200, 49);
             this.btnLaporan.TabIndex = 6;
             this.btnLaporan.Text = "Kelola Laporan";
             this.btnLaporan.UseVisualStyleBackColor = false;
@@ -93,41 +93,18 @@
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUser.ForeColor = System.Drawing.Color.White;
-            this.btnUser.Location = new System.Drawing.Point(29, 296);
+            this.btnUser.Location = new System.Drawing.Point(55, 426);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(200, 50);
+            this.btnUser.Size = new System.Drawing.Size(200, 49);
             this.btnUser.TabIndex = 6;
             this.btnUser.Text = "Kelola User";
             this.btnUser.UseVisualStyleBackColor = false;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(101, 571);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(76, 37);
-            this.btnLogout.TabIndex = 0;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(82, 54);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(125, 37);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "ADMIN";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LKSMart.Properties.Resources.administrator_1;
-            this.pictureBox1.Location = new System.Drawing.Point(75, 108);
+            this.pictureBox1.Location = new System.Drawing.Point(70, 140);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(165, 165);
@@ -135,19 +112,46 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(120, 700);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(80, 40);
+            this.btnLogout.TabIndex = 0;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(88, 308);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(125, 37);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "ADMIN";
+            // 
             // panelMain
             // 
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(310, 0);
+            this.panelMain.Location = new System.Drawing.Point(300, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(690, 800);
+            this.panelMain.Size = new System.Drawing.Size(750, 769);
             this.panelMain.TabIndex = 31;
             // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 800);
+            this.ClientSize = new System.Drawing.Size(1050, 769);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

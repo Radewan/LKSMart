@@ -19,7 +19,7 @@ namespace LKSMart
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
-            label1.Text += "aaaa";
+            
         }
     }
 }

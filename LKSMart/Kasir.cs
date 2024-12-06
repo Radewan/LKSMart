@@ -12,17 +12,42 @@ namespace LKSMart
 {
     public partial class Kasir : Form
     {
-        public Kasir()
+        public Kasir(int bb)
         {
             InitializeComponent();
+
+            this.UserId = bb;
         }
+
+        private int UserId;
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.ShowDialog();
 
-            
+            using (var db = new lks_martEntities2())
+            {
+
+                var log = new tbl_log
+                {
+
+                    waktu = DateTime.Now,
+                    aktivitas = "Logout",
+                    id_user = UserId,
+                };
+                db.tbl_log.Add(log);
+                db.SaveChanges();
+
+                Console.Write(UserId);
+
+                Login login = new Login();
+                login.Show();
+                this.Close();
+            }
+        }
+
+        private void Kasir_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

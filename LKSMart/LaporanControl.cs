@@ -16,5 +16,17 @@ namespace LKSMart
         {
             InitializeComponent();
         }
+
+        private void LaporanControl_Load(object sender, EventArgs e)
+        {
+            using (var db = new lks_martEntities2())
+            {
+                var query = db.tbl_transaksi
+                    .Select(s => new { s.no_transaksi, s.tgl_transaksi, s.total_bayar, s.nama_kasir, s.tbl_pelanggan.nama })
+                    .ToList();
+
+                dataRead.DataSource = query;
+            }
+        }
     }
 }
