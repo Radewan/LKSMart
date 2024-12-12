@@ -54,10 +54,10 @@
           <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tipe_user" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="nama" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="alamat" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="alamat" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="telepon" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_tbl_log_tbl_user">
           <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="1" />
@@ -190,10 +190,10 @@
           <Property Name="id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="tipe_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="nama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="alamat" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="alamat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="telepon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="tbl_log" Relationship="Self.FK_tbl_log_tbl_user" FromRole="tbl_user" ToRole="tbl_log" />
           <NavigationProperty Name="tbl_transaksi" Relationship="Self.FK_tbl_transaksi_tbl_user" FromRole="tbl_user" ToRole="tbl_transaksi" />
         </EntityType>
@@ -245,7 +245,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="lks_martEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="lks_martEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tbl_barang" EntityType="Self.tbl_barang" />
           <EntitySet Name="tbl_log" EntityType="Self.tbl_log" />
           <EntitySet Name="tbl_pelanggan" EntityType="Self.tbl_pelanggan" />
@@ -273,7 +273,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="lks_martModelStoreContainer" CdmEntityContainer="lks_martEntities2">
+        <EntityContainerMapping StorageEntityContainer="lks_martModelStoreContainer" CdmEntityContainer="lks_martEntities">
           <EntitySetMapping Name="tbl_barang">
             <EntityTypeMapping TypeName="lks_martModel.tbl_barang">
               <MappingFragment StoreEntitySet="tbl_barang">

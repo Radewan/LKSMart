@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataRead = new System.Windows.Forms.DataGridView();
             this.txtNama = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -50,19 +50,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataRead)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataRead
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(139, 414);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(269, 98);
-            this.dataGridView1.TabIndex = 0;
+            this.dataRead.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataRead.Location = new System.Drawing.Point(78, 338);
+            this.dataRead.Margin = new System.Windows.Forms.Padding(2);
+            this.dataRead.Name = "dataRead";
+            this.dataRead.RowHeadersWidth = 62;
+            this.dataRead.RowTemplate.Height = 28;
+            this.dataRead.Size = new System.Drawing.Size(355, 98);
+            this.dataRead.TabIndex = 0;
             // 
             // txtNama
             // 
@@ -156,10 +156,11 @@
             this.btnHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHapus.ForeColor = System.Drawing.Color.White;
             this.btnHapus.ImageKey = "Delete.png";
-            this.btnHapus.Location = new System.Drawing.Point(380, 172);
+            this.btnHapus.ImageList = this.imageList1;
+            this.btnHapus.Location = new System.Drawing.Point(355, 149);
             this.btnHapus.Margin = new System.Windows.Forms.Padding(2);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(60, 30);
+            this.btnHapus.Size = new System.Drawing.Size(78, 35);
             this.btnHapus.TabIndex = 54;
             this.btnHapus.Text = " Hapus";
             this.btnHapus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -172,10 +173,11 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.ImageKey = "Edit.png";
-            this.btnEdit.Location = new System.Drawing.Point(380, 122);
+            this.btnEdit.ImageList = this.imageList1;
+            this.btnEdit.Location = new System.Drawing.Point(362, 96);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(60, 30);
+            this.btnEdit.Size = new System.Drawing.Size(78, 34);
             this.btnEdit.TabIndex = 55;
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -192,11 +194,12 @@
             this.btnTambah.Location = new System.Drawing.Point(362, 27);
             this.btnTambah.Margin = new System.Windows.Forms.Padding(2);
             this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(113, 91);
+            this.btnTambah.Size = new System.Drawing.Size(78, 37);
             this.btnTambah.TabIndex = 56;
             this.btnTambah.Text = "Tambah";
             this.btnTambah.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTambah.UseVisualStyleBackColor = false;
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
             // 
             // label3
             // 
@@ -211,7 +214,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(320, 226);
+            this.label4.Location = new System.Drawing.Point(49, 223);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
@@ -221,7 +224,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(405, 290);
+            this.label5.Location = new System.Drawing.Point(215, 223);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
@@ -231,7 +234,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(394, 369);
+            this.label6.Location = new System.Drawing.Point(420, 274);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 13);
@@ -241,7 +244,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(377, 328);
+            this.label7.Location = new System.Drawing.Point(394, 250);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 13);
@@ -251,7 +254,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(286, 342);
+            this.label8.Location = new System.Drawing.Point(144, 274);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 13);
@@ -288,11 +291,12 @@
             this.Controls.Add(this.txtAlamat);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtNama);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataRead);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserControl";
             this.Size = new System.Drawing.Size(500, 500);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.UserControl_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataRead)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +304,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataRead;
         private System.Windows.Forms.TextBox txtNama;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUsername;

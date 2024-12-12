@@ -24,32 +24,24 @@ namespace LKSMart
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-            if (txtUsername.Text.Trim() == "" || txtPassword.Text.Trim() == "")
+            if (String.IsNullOrWhiteSpace(txtUsername.Text) || String.IsNullOrWhiteSpace(txtPassword.Text))
             {
-                MessageBox.Show("Pastikan semua field wajib di isi", "W arning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Pastikan semua field wajib di isi", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
 
-                using (var db = new lks_martEntities2())
+                using (var db = new lks_martEntities())
                 {
 
 
-                    string query = db.tbl_user
-                        .Where(s => s.username.Equals(txtUsername.Text.ToString())
-                        && s.password.Equals(txtPassword.Text.ToString()))
-                        .Select(s => s.tipe_user)
+                    var user = db.tbl_user
+                        .Where(s => s.username.Equals(txtUsername.Text)
+                        && s.password.Equals(txtPassword.Text))
+                        .Select(s => new { s.id_user ,s.tipe_user })
                         .FirstOrDefault();
 
-                    int queryId = db.tbl_user
-                        .Where(s => s.username.Equals(txtUsername.Text.ToString())
-                         && s.password.Equals(txtPassword.Text.ToString()))
-                        .Select(s => s.id_user)
-                        .FirstOrDefault();
-                    //gak case sensitive
-
-                    if (query == null)
+                    if (user == null)
                     {
                         MessageBox.Show("username atau password yang anda masukkan tidak sesuai !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -60,27 +52,27 @@ namespace LKSMart
 
                             waktu = DateTime.Now,
                             aktivitas = "Login",
-                            id_user = queryId
+                            id_user = user.id_user,
                         };
                         db.tbl_log.Add(log);
                         db.SaveChanges();
 
-                        switch (query)
+                        switch (user.tipe_user)
                         {
                             case "Admin":
-                                Admin admin = new Admin(queryId);
+                                AdminForm admin = new AdminForm(user.id_user);
                                 admin.Show();
                                 Hide();
                                 break;
 
                             case "Gudang":
-                                Gudang gudang = new Gudang(queryId);
+                                Gudang gudang = new Gudang(user.id_user);
                                 gudang.Show();
                                 Hide();
                                 break;
 
                             case "Kasir":
-                                Kasir kasir = new Kasir(queryId);
+                                Kasir kasir = new Kasir(user.id_user);
                                 kasir.Show();
                                 Hide();
                                 break;

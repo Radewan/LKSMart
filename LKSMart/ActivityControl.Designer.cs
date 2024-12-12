@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateSampai = new System.Windows.Forms.DateTimePicker();
+            this.dateDari = new System.Windows.Forms.DateTimePicker();
             this.btnFilter = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataRead = new System.Windows.Forms.DataGridView();
@@ -44,34 +44,35 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataRead)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker2
+            // dateSampai
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(27, 163);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(319, 26);
-            this.dateTimePicker2.TabIndex = 5;
+            this.dateSampai.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateSampai.Location = new System.Drawing.Point(27, 163);
+            this.dateSampai.Name = "dateSampai";
+            this.dateSampai.Size = new System.Drawing.Size(319, 26);
+            this.dateSampai.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // dateDari
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(27, 131);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(116, 26);
-            this.dateTimePicker1.TabIndex = 6;
+            this.dateDari.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateDari.Location = new System.Drawing.Point(27, 131);
+            this.dateDari.Name = "dateDari";
+            this.dateDari.Size = new System.Drawing.Size(116, 26);
+            this.dateDari.TabIndex = 6;
             // 
             // btnFilter
             // 
             this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(101)))), ((int)(((byte)(134)))));
             this.btnFilter.FlatAppearance.BorderSize = 0;
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilter.Location = new System.Drawing.Point(362, 392);
+            this.btnFilter.Location = new System.Drawing.Point(225, 249);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(76, 37);
             this.btnFilter.TabIndex = 7;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // label1
             // 
@@ -198,8 +199,8 @@
             this.Controls.Add(this.labelWaktu);
             this.Controls.Add(this.labelTanggal);
             this.Controls.Add(this.dataRead);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateSampai);
+            this.Controls.Add(this.dateDari);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.label1);
             this.Name = "ActivityControl";
@@ -213,8 +214,8 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateSampai;
+        private System.Windows.Forms.DateTimePicker dateDari;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataRead;

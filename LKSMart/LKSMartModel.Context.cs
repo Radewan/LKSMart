@@ -13,10 +13,10 @@ namespace LKSMart
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class lks_martEntities2 : DbContext
+    public partial class lks_martEntities : DbContext
     {
-        public lks_martEntities2()
-            : base("name=lks_martEntities2")
+        public lks_martEntities()
+            : base("name=lks_martEntities")
         {
         }
     

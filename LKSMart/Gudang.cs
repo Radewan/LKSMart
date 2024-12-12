@@ -26,15 +26,12 @@ namespace LKSMart
 
         }
 
-        private bool[] rowHeaderCheckboxStates;
-
         private int UserId;
 
 
         private void Gudang_Load(object sender, EventArgs e)
         {
             ReadData();
-            rowHeaderCheckboxStates = new bool[dataRead.Rows.Count];
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
@@ -47,7 +44,7 @@ namespace LKSMart
 
             if (result == DialogResult.Yes)
             {
-                using (var db = new lks_martEntities2())
+                using (var db = new lks_martEntities())
                 {
                     int jumlah = int.Parse(txtJumlah.Text), harga = int.Parse(txtHarga.Text);
 
@@ -78,7 +75,7 @@ namespace LKSMart
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            using (var db = new lks_martEntities2())
+            using (var db = new lks_martEntities())
             {
 
                 var log = new tbl_log
@@ -102,7 +99,7 @@ namespace LKSMart
 
         public void ReadData()
         {
-            using (var db = new lks_martEntities2())
+            using (var db = new lks_martEntities())
             {
                 var query = db.tbl_barang
                     .Select(s => s)
@@ -132,10 +129,6 @@ namespace LKSMart
       MessageBoxButtons.YesNo,
       MessageBoxIcon.Information);
 
-            if (result == DialogResult.Yes)
-            {
-                Koneksi.QueryRead("SELECT * FROM tbl_barang;", dataRead);
-            }
         }
 
         private void btnHapus_Click(object sender, EventArgs e)
@@ -146,46 +139,37 @@ namespace LKSMart
       MessageBoxButtons.YesNo,
       MessageBoxIcon.Information);
 
-            if (result == DialogResult.Yes)
-            {
-                Koneksi.QueryRead("SELECT * FROM tbl_barang;", dataRead);
-            }
+        
         }
 
         private void dataRead_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex == -1 && e.RowIndex >= 0)
-            {
-                // Toggle status checkbox
-                rowHeaderCheckboxStates[e.RowIndex] = !rowHeaderCheckboxStates[e.RowIndex];
 
-                // Refresh tampilan
-                dataRead.InvalidateCell(e.ColumnIndex, e.RowIndex);
-            }
         }
 
         private void dataRead_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == -1)
+
+        }
+
+        private void dataRead_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
             {
-                e.PaintBackground(e.ClipBounds, true);
+                bool isChecked = Convert.ToBoolean(dataRead.Rows[e.RowIndex].Cells[0].Value);
 
-                // Tentukan lokasi checkbox
-                Rectangle rect = new Rectangle(
-                    e.CellBounds.X + (e.CellBounds.Width - 14) / 2,
-                    e.CellBounds.Y + (e.CellBounds.Height - 14) / 2,
-                    14, 14);
-
-                // Tentukan status checkbox
-                CheckBoxState state = rowHeaderCheckboxStates[e.RowIndex]
-                    ? CheckBoxState.CheckedNormal
-                    : CheckBoxState.UncheckedNormal;
-
-                // Gambar checkbox
-                CheckBoxRenderer.DrawCheckBox(e.Graphics, rect.Location, state);
-
-                e.Handled = true;
+                if (isChecked)
+                {
+                    dataRead.Rows[e.RowIndex].Cells[0].Value = false;
+                }
+                else
+                {
+                    dataRead.Rows[e.RowIndex].Cells[0].Value = true;
+                }
             }
+
+            //make
         }
     }
 }

@@ -76,7 +76,7 @@ namespace LKSMart
 
         private void ReadData()
         {
-            using (var db = new lks_martEntities2())
+            using (var db = new lks_martEntities())
             {
                 var rows = db.tbl_log
                     .Count(s => s.id_log >= 1);
@@ -87,6 +87,35 @@ namespace LKSMart
             .OrderBy(s => s.id_log)
             .Skip((CurrentPageIndex - 1) * PageSize)
             .Take(PageSize)
+            .Select(s => new { s.id_log, s.tbl_user.username, s.waktu, s.aktivitas })
+            .ToList();
+
+                labelCurentPage.Text = CurrentPageIndex.ToString();
+
+                Console.WriteLine(query.ToString());
+
+                dataRead.DataSource = query;
+                dataRead.Columns["id_log"].HeaderText = "No";
+                dataRead.Columns["username"].HeaderText = "Username";
+                dataRead.Columns["waktu"].HeaderText = "Waktu";
+                dataRead.Columns["aktivitas"].HeaderText = "Aktivitas";
+            }
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            using (var db = new lks_martEntities())
+            {
+                var rows = db.tbl_log
+                    .Count(s => s.id_log >= 1);
+
+                TotalPages = (int)Math.Ceiling((double)rows / PageSize);
+
+                var query = db.tbl_log
+            .OrderBy(s => s.id_log)
+            .Skip((CurrentPageIndex - 1) * PageSize)
+            .Take(PageSize)
+            .Where(s => s.waktu >= dateDari.Value && s.waktu <= dateSampai.Value)
             .Select(s => new { s.id_log, s.tbl_user.username, s.waktu, s.aktivitas })
             .ToList();
 

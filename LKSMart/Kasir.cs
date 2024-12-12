@@ -24,7 +24,7 @@ namespace LKSMart
         private void btnLogout_Click(object sender, EventArgs e)
         {
 
-            using (var db = new lks_martEntities2())
+            using (var db = new lks_martEntities())
             {
 
                 var log = new tbl_log

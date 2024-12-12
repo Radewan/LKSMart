@@ -16,7 +16,7 @@ namespace LKSMart
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Admin(1));
+            Application.Run(new Login());
         }
     }
 }

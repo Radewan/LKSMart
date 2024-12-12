@@ -79,11 +79,11 @@
     <Compile Include="ActivityControl.Designer.cs">
       <DependentUpon>ActivityControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin.cs">
+    <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin.Designer.cs">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Gudang.cs">
       <SubType>Form</SubType>
@@ -97,12 +97,26 @@
     <Compile Include="Kasir.Designer.cs">
       <DependentUpon>Kasir.cs</DependentUpon>
     </Compile>
-    <Compile Include="Koneksi.cs" />
     <Compile Include="LaporanControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="LaporanControl.Designer.cs">
       <DependentUpon>LaporanControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LKSMartModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LKSMartModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LKSMartModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LKSMartModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LKSMartModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LKSMartModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -110,37 +124,22 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mydatabase.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Mydatabase.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Mydatabase.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Mydatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Mydatabase.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Mydatabase.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tbl_barang.cs">
-      <DependentUpon>Mydatabase.tt</DependentUpon>
+      <DependentUpon>LKSMartModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_log.cs">
-      <DependentUpon>Mydatabase.tt</DependentUpon>
+      <DependentUpon>LKSMartModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_pelanggan.cs">
-      <DependentUpon>Mydatabase.tt</DependentUpon>
+      <DependentUpon>LKSMartModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_transaksi.cs">
-      <DependentUpon>Mydatabase.tt</DependentUpon>
+      <DependentUpon>LKSMartModel.tt</DependentUpon>
     </Compile>
     <Compile Include="tbl_user.cs">
-      <DependentUpon>Mydatabase.tt</DependentUpon>
+      <DependentUpon>LKSMartModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UserControl.cs">
       <SubType>UserControl</SubType>
@@ -154,8 +153,8 @@
     <EmbeddedResource Include="ActivityControl.resx">
       <DependentUpon>ActivityControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin.resx">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gudang.resx">
       <DependentUpon>Gudang.cs</DependentUpon>
@@ -182,12 +181,12 @@
     <EmbeddedResource Include="UserControl.resx">
       <DependentUpon>UserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Mydatabase.edmx">
+    <EntityDeploy Include="LKSMartModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Mydatabase.Designer.cs</LastGenOutput>
+      <LastGenOutput>LKSMartModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Mydatabase.edmx.diagram">
-      <DependentUpon>Mydatabase.edmx</DependentUpon>
+    <None Include="LKSMartModel.edmx.diagram">
+      <DependentUpon>LKSMartModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -232,15 +231,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Mydatabase.Context.tt">
+    <Content Include="LKSMartModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Mydatabase.edmx</DependentUpon>
-      <LastGenOutput>Mydatabase.Context.cs</LastGenOutput>
+      <DependentUpon>LKSMartModel.edmx</DependentUpon>
+      <LastGenOutput>LKSMartModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Mydatabase.tt">
+    <Content Include="LKSMartModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Mydatabase.edmx</DependentUpon>
-      <LastGenOutput>Mydatabase.cs</LastGenOutput>
+      <DependentUpon>LKSMartModel.edmx</DependentUpon>
+      <LastGenOutput>LKSMartModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
