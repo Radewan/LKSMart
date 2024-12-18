@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LKSMart
 {
-    public partial class Kasir : Form
+    public partial class KasirForm : Form
     {
-        public Kasir(int bb)
+        public KasirForm(int bb)
         {
             InitializeComponent();
 
@@ -39,7 +39,7 @@ namespace LKSMart
 
                 Console.Write(UserId);
 
-                Login login = new Login();
+                LoginForm login = new LoginForm();
                 login.Show();
                 this.Close();
             }

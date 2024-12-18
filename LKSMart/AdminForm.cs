@@ -56,7 +56,7 @@ namespace LKSMart
 
                 Console.WriteLine(UserId);
 
-                Login login = new Login();
+                LoginForm login = new LoginForm();
                 login.Show();
                 this.Close();
 

@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace LKSMart
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -66,13 +66,13 @@ namespace LKSMart
                                 break;
 
                             case "Gudang":
-                                Gudang gudang = new Gudang(user.id_user);
+                                GudangForm gudang = new GudangForm(user.id_user);
                                 gudang.Show();
                                 Hide();
                                 break;
 
                             case "Kasir":
-                                Kasir kasir = new Kasir(user.id_user);
+                                KasirForm kasir = new KasirForm(user.id_user);
                                 kasir.Show();
                                 Hide();
                                 break;

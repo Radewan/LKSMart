@@ -1,6 +1,6 @@
 ﻿namespace LKSMart
 {
-    partial class Gudang
+    partial class GudangForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gudang));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GudangForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -43,7 +43,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnTambah = new System.Windows.Forms.Button();
             this.txtKode = new System.Windows.Forms.TextBox();
-            this.txtBarang = new System.Windows.Forms.TextBox();
+            this.txtNama = new System.Windows.Forms.TextBox();
             this.txtJumlah = new System.Windows.Forms.TextBox();
             this.txtSatuan = new System.Windows.Forms.TextBox();
             this.txtHarga = new System.Windows.Forms.TextBox();
@@ -59,7 +59,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dateExpired = new System.Windows.Forms.DateTimePicker();
-            this.CheckboxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblIndexPage = new System.Windows.Forms.Label();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.Checkbox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataRead)).BeginInit();
@@ -211,12 +214,12 @@
             this.txtKode.Size = new System.Drawing.Size(200, 26);
             this.txtKode.TabIndex = 57;
             // 
-            // txtBarang
+            // txtNama
             // 
-            this.txtBarang.Location = new System.Drawing.Point(520, 206);
-            this.txtBarang.Name = "txtBarang";
-            this.txtBarang.Size = new System.Drawing.Size(100, 26);
-            this.txtBarang.TabIndex = 56;
+            this.txtNama.Location = new System.Drawing.Point(520, 206);
+            this.txtNama.Name = "txtNama";
+            this.txtNama.Size = new System.Drawing.Size(100, 26);
+            this.txtNama.TabIndex = 56;
             // 
             // txtJumlah
             // 
@@ -259,7 +262,7 @@
             this.dataRead.ColumnHeadersHeight = 34;
             this.dataRead.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataRead.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CheckboxColumn});
+            this.Checkbox});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -355,6 +358,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(100, 26);
             this.txtSearch.TabIndex = 57;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label8
             // 
@@ -388,20 +392,54 @@
             this.dateExpired.Size = new System.Drawing.Size(150, 26);
             this.dateExpired.TabIndex = 62;
             // 
-            // CheckboxColumn
+            // lblIndexPage
             // 
-            this.CheckboxColumn.HeaderText = "";
-            this.CheckboxColumn.MinimumWidth = 8;
-            this.CheckboxColumn.Name = "CheckboxColumn";
-            this.CheckboxColumn.ReadOnly = true;
-            this.CheckboxColumn.Width = 29;
+            this.lblIndexPage.AutoSize = true;
+            this.lblIndexPage.Location = new System.Drawing.Point(590, 366);
+            this.lblIndexPage.Name = "lblIndexPage";
+            this.lblIndexPage.Size = new System.Drawing.Size(18, 20);
+            this.lblIndexPage.TabIndex = 65;
+            this.lblIndexPage.Text = "1";
             // 
-            // Gudang
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(614, 366);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 40);
+            this.btnNext.TabIndex = 63;
+            this.btnNext.Text = ">";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Location = new System.Drawing.Point(496, 366);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(75, 40);
+            this.btnPrevious.TabIndex = 64;
+            this.btnPrevious.Text = "<";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // Checkbox
+            // 
+            this.Checkbox.HeaderText = "";
+            this.Checkbox.MinimumWidth = 20;
+            this.Checkbox.Name = "Checkbox";
+            this.Checkbox.ReadOnly = true;
+            this.Checkbox.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Checkbox.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Checkbox.Width = 29;
+            // 
+            // GudangForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 769);
+            this.Controls.Add(this.lblIndexPage);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.dateExpired);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label8);
@@ -414,7 +452,7 @@
             this.Controls.Add(this.txtHarga);
             this.Controls.Add(this.txtSatuan);
             this.Controls.Add(this.txtJumlah);
-            this.Controls.Add(this.txtBarang);
+            this.Controls.Add(this.txtNama);
             this.Controls.Add(this.txtKode);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.btnEdit);
@@ -423,7 +461,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Gudang";
+            this.Name = "GudangForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gudang";
             this.Load += new System.EventHandler(this.Gudang_Load);
@@ -450,7 +488,7 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnTambah;
         private System.Windows.Forms.TextBox txtKode;
-        private System.Windows.Forms.TextBox txtBarang;
+        private System.Windows.Forms.TextBox txtNama;
         private System.Windows.Forms.TextBox txtJumlah;
         private System.Windows.Forms.TextBox txtSatuan;
         private System.Windows.Forms.TextBox txtHarga;
@@ -467,6 +505,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.DateTimePicker dateExpired;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CheckboxColumn;
+        private System.Windows.Forms.Label lblIndexPage;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Checkbox;
     }
 }

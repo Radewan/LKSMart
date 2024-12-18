@@ -1,6 +1,6 @@
 ﻿namespace LKSMart
 {
-    partial class Kasir
+    partial class KasirForm
     {
         /// <summary>
         /// Required designer variable.

@@ -67,12 +67,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="aa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="aa.Designer.cs">
-      <DependentUpon>aa.cs</DependentUpon>
-    </Compile>
     <Compile Include="ActivityControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -85,17 +79,17 @@
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gudang.cs">
+    <Compile Include="GudangForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gudang.Designer.cs">
-      <DependentUpon>Gudang.cs</DependentUpon>
+    <Compile Include="GudangForm.Designer.cs">
+      <DependentUpon>GudangForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Kasir.cs">
+    <Compile Include="KasirForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Kasir.Designer.cs">
-      <DependentUpon>Kasir.cs</DependentUpon>
+    <Compile Include="KasirForm.Designer.cs">
+      <DependentUpon>KasirForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LaporanControl.cs">
       <SubType>UserControl</SubType>
@@ -118,11 +112,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LKSMartModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,26 +141,23 @@
     <Compile Include="UserControl.Designer.cs">
       <DependentUpon>UserControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="aa.resx">
-      <DependentUpon>aa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ActivityControl.resx">
       <DependentUpon>ActivityControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gudang.resx">
-      <DependentUpon>Gudang.cs</DependentUpon>
+    <EmbeddedResource Include="GudangForm.resx">
+      <DependentUpon>GudangForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Kasir.resx">
-      <DependentUpon>Kasir.cs</DependentUpon>
+    <EmbeddedResource Include="KasirForm.resx">
+      <DependentUpon>KasirForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LaporanControl.resx">
       <DependentUpon>LaporanControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

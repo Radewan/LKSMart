@@ -31,14 +31,13 @@ namespace LKSMart
 
         }
 
-        private int CurrentPageIndex;
+        private int CurrentPageIndex = 1;
         private const int PageSize = 6;
-        private int TotalPages;
+        private int TotalPages = 1;
 
 
         private void ActivityControl_Load(object sender, EventArgs e)
         {
-            CurrentPageIndex = 1;
 
             CultureInfo culture = new CultureInfo("id-ID");
 
